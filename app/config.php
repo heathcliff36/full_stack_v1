@@ -15,7 +15,7 @@ try{
     echo "Error al conectar a la base de datos";
 }
 
-$URL = "http://localhost/sistemadeventas-con-logos";
+$URL = "http://localhost/full_stack_v1";
 
 date_default_timezone_set("America/Asuncion");
 $fechaHora = date('Y-m-d H:i:s');
