@@ -1,12 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: HILARIWEB
- * Date: 30/1/2023
- * Time: 18:47
- */
 
-include ('../../config.php');
+include('../../config.php');
 
 $codigo = $_POST['codigo'];
 $id_categoria = $_POST['id_categoria'];
@@ -23,14 +17,13 @@ $id_producto = $_POST['id_producto'];
 $image_text = $_POST['image_text'];
 
 
-if($_FILES['image']['name'] != null){
-    //echo "hay imagen nueva";
+if ($_FILES['image']['name'] != null) {
     $nombreDelArchivo = date("Y-m-d-h-i-s");
-    $image_text = $nombreDelArchivo."__".$_FILES['image']['name'];
-    $location = "../../../almacen/img_productos/".$image_text;
-    move_uploaded_file($_FILES['image']['tmp_name'],$location);
-}else{
-   // echo "no hay imagen";
+    $image_text = $nombreDelArchivo . "__" . $_FILES['image']['name'];
+    $location = "../../../almacen/img_productos/" . $image_text;
+    move_uploaded_file($_FILES['image']['tmp_name'], $location);
+} else {
+    // echo "no hay imagen";
 }
 
 
@@ -49,31 +42,28 @@ $sentencia = $pdo->prepare("UPDATE tb_almacen
         fyh_actualizacion=:fyh_actualizacion 
     WHERE id_producto = :id_producto ");
 
-$sentencia->bindParam('nombre',$nombre);
-$sentencia->bindParam('descripcion',$descripcion);
-$sentencia->bindParam('stock',$stock);
-$sentencia->bindParam('stock_minimo',$stock_minimo);
-$sentencia->bindParam('stock_maximo',$stock_maximo);
-$sentencia->bindParam('precio_compra',$precio_compra);
-$sentencia->bindParam('precio_venta',$precio_venta);
-$sentencia->bindParam('fecha_ingreso',$fecha_ingreso);
-$sentencia->bindParam('imagen',$image_text);
-$sentencia->bindParam('id_usuario',$id_usuario);
-$sentencia->bindParam('id_categoria',$id_categoria);
-$sentencia->bindParam('fyh_actualizacion',$fechaHora);
-$sentencia->bindParam('id_producto',$id_producto);
+$sentencia->bindParam('nombre', $nombre);
+$sentencia->bindParam('descripcion', $descripcion);
+$sentencia->bindParam('stock', $stock);
+$sentencia->bindParam('stock_minimo', $stock_minimo);
+$sentencia->bindParam('stock_maximo', $stock_maximo);
+$sentencia->bindParam('precio_compra', $precio_compra);
+$sentencia->bindParam('precio_venta', $precio_venta);
+$sentencia->bindParam('fecha_ingreso', $fecha_ingreso);
+$sentencia->bindParam('imagen', $image_text);
+$sentencia->bindParam('id_usuario', $id_usuario);
+$sentencia->bindParam('id_categoria', $id_categoria);
+$sentencia->bindParam('fyh_actualizacion', $fechaHora);
+$sentencia->bindParam('id_producto', $id_producto);
 
-if($sentencia->execute()){
+if ($sentencia->execute()) {
     session_start();
     $_SESSION['mensaje'] = "Se actualizo el producto de la manera correcta";
     $_SESSION['icono'] = "success";
-    header('Location: '.$URL.'/almacen/');
-}else{
+    header('Location: ' . $URL . '/almacen/');
+} else {
     session_start();
     $_SESSION['mensaje'] = "Error no se pudo actualizar en la base de datos";
     $_SESSION['icono'] = "error";
-    header('Location: '.$URL.'/almacen/update.php?id='.$id_producto);
+    header('Location: ' . $URL . '/almacen/update.php?id=' . $id_producto);
 }
-
-
-

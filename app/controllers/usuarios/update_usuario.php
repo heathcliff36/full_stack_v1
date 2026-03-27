@@ -2,15 +2,23 @@
 
 $id_usuario_get = $_GET['id'];
 
-$sql_usuarios = "SELECT us.id_usuario as id_usuario, us.nombres as nombres, us.user as user, us.email as email, rol.rol as rol 
-                  FROM tb_usuarios as us INNER JOIN tb_roles as rol ON us.id_rol = rol.id_rol where id_usuario = '$id_usuario_get' ";
+$sql_usuarios = "SELECT us.id_usuario as id_usuario,
+                        us.nombres as nombres,
+                        us.user as user,
+                        us.email as email,
+                        rol.rol as rol,
+                        us.imagen as perfil
+                  FROM tb_usuarios as us 
+                  INNER JOIN tb_roles as rol ON us.id_rol = rol.id_rol 
+                  WHERE id_usuario = '$id_usuario_get' ";
 $query_usuarios = $pdo->prepare($sql_usuarios);
 $query_usuarios->execute();
 $usuarios_datos = $query_usuarios->fetchAll(PDO::FETCH_ASSOC);
 
-foreach ($usuarios_datos as $usuarios_dato){
+foreach ($usuarios_datos as $usuarios_dato) {
     $nombres = $usuarios_dato['nombres'];
     $user = $usuarios_dato['user'];
     $email = $usuarios_dato['email'];
     $rol = $usuarios_dato['rol'];
+    $foto = $usuarios_dato['perfil'];
 }

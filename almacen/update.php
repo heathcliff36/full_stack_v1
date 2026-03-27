@@ -1,11 +1,11 @@
 <?php
-include ('../app/config.php');
-include ('../layout/sesion.php');
+include('../app/config.php');
+include('../layout/sesion.php');
 
-include ('../layout/parte1.php');
+include('../layout/parte1.php');
 
-include ('../app/controllers/categorias/listado_de_categoria.php');
-include ('../app/controllers/almacen/cargar_producto.php');
+include('../app/controllers/categorias/listado_de_categoria.php');
+include('../app/controllers/almacen/cargar_producto.php');
 
 ?>
 
@@ -54,8 +54,8 @@ include ('../app/controllers/almacen/cargar_producto.php');
                                                         <div class="form-group">
                                                             <label for="">Código:</label>
                                                             <input type="text" class="form-control"
-                                                                   value="<?php echo $codigo; ?>" disabled>
-                                                            <input type="text"  name="codigo" value="<?php echo $codigo; ?>" hidden>
+                                                                value="<?php echo $codigo; ?>" disabled>
+                                                            <input type="text" name="codigo" value="<?php echo $codigo; ?>" hidden>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
@@ -64,13 +64,13 @@ include ('../app/controllers/almacen/cargar_producto.php');
                                                             <div style="display: flex">
                                                                 <select name="id_categoria" id="" class="form-control" required>
                                                                     <?php
-                                                                    foreach ($categorias_datos as $categorias_dato){
+                                                                    foreach ($categorias_datos as $categorias_dato) {
                                                                         $nombre_categoria_tabla = $categorias_dato['nombre_categoria'];
-                                                                        $id_categoria = $categorias_dato['id_categoria']?>
-                                                                        <option value="<?php echo $id_categoria; ?>"<?php if($nombre_categoria_tabla == $nombre_categoria){ ?> selected="selected" <?php } ?> >
-                                                                            <?php echo $nombre_categoria_tabla;?>
+                                                                        $id_categoria = $categorias_dato['id_categoria'] ?>
+                                                                        <option value="<?php echo $id_categoria; ?>" <?php if ($nombre_categoria_tabla == $nombre_categoria) { ?> selected="selected" <?php } ?>>
+                                                                            <?php echo $nombre_categoria_tabla; ?>
                                                                         </option>
-                                                                        <?php
+                                                                    <?php
                                                                     }
                                                                     ?>
                                                                 </select>
@@ -81,7 +81,7 @@ include ('../app/controllers/almacen/cargar_producto.php');
                                                     <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label for="">Nombre del producto:</label>
-                                                            <input type="text" name="nombre" value="<?php echo $nombre;?>" class="form-control" required>
+                                                            <input type="text" name="nombre" value="<?php echo $nombre; ?>" class="form-control" required>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -97,7 +97,7 @@ include ('../app/controllers/almacen/cargar_producto.php');
                                                     <div class="col-md-8">
                                                         <div class="form-group">
                                                             <label for="">Descripción del producto:</label>
-                                                            <textarea name="descripcion" id="" cols="30" rows="2" class="form-control"><?php echo $descripcion;?></textarea>
+                                                            <textarea name="descripcion" id="" cols="30" rows="2" class="form-control"><?php echo $descripcion; ?></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -107,7 +107,7 @@ include ('../app/controllers/almacen/cargar_producto.php');
                                                     <div class="col-md-2">
                                                         <div class="form-group">
                                                             <label for="">Stock:</label>
-                                                            <input type="number" name="stock" value="<?php echo $stock;?>" class="form-control" required>
+                                                            <input type="number" name="stock" value="<?php echo $stock; ?>" class="form-control" required>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-2">
@@ -151,7 +151,7 @@ include ('../app/controllers/almacen/cargar_producto.php');
                                                     <input type="text" name="image_text" value="<?php echo $imagen; ?>" hidden>
                                                     <br>
                                                     <output id="list">
-                                                        <img src="<?php echo $URL."/almacen/img_productos/".$imagen; ?>" width="100%" alt="">
+                                                        <img src="<?php echo $URL . "/almacen/img_productos/" . $imagen; ?>" width="100%" alt="">
                                                     </output>
                                                     <script>
                                                         function archivo(evt) {
@@ -163,10 +163,10 @@ include ('../app/controllers/almacen/cargar_producto.php');
                                                                     continue;
                                                                 }
                                                                 var reader = new FileReader();
-                                                                reader.onload = (function (theFile) {
-                                                                    return function (e) {
+                                                                reader.onload = (function(theFile) {
+                                                                    return function(e) {
                                                                         // Insertamos la imagen
-                                                                        document.getElementById("list").innerHTML = ['<img class="thumb thumbnail" src="',e.target.result, '" width="100%" title="', escape(theFile.name), '"/>'].join('');
+                                                                        document.getElementById("list").innerHTML = ['<img class="thumb thumbnail" src="', e.target.result, '" width="100%" title="', escape(theFile.name), '"/>'].join('');
                                                                     };
                                                                 })(f);
                                                                 reader.readAsDataURL(f);
@@ -177,10 +177,6 @@ include ('../app/controllers/almacen/cargar_producto.php');
                                                 </div>
                                             </div>
                                         </div>
-
-
-
-
 
                                         <hr>
                                         <div class="form-group">
@@ -203,5 +199,5 @@ include ('../app/controllers/almacen/cargar_producto.php');
 </div>
 <!-- /.content-wrapper -->
 
-<?php include ('../layout/mensajes.php'); ?>
-<?php include ('../layout/parte2.php'); ?>
+<?php include('../layout/mensajes.php'); ?>
+<?php include('../layout/parte2.php'); ?>

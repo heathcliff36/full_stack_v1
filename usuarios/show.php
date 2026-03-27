@@ -54,6 +54,16 @@ include('../app/controllers/usuarios/show_usuario.php');
                                         <label for="">Rol del usuario</label>
                                         <input type="text" name="email" class="form-control" value="<?php echo $rol; ?>" disabled>
                                     </div>
+                                    <center>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="">Perfil del Usuario</label>
+                                                <center>
+                                                    <img src="<?php echo $URL . "/usuarios/user_perfil/" . $perfil; ?>" width="100%" alt="">
+                                                </center>
+                                            </div>
+                                        </div>
+                                    </center>
                                     <hr>
                                     <div class="form-group">
                                         <a href="index.php" class="btn btn-secondary">Volver</a>
