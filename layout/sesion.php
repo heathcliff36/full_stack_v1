@@ -15,7 +15,7 @@ if (isset($_SESSION['sesion_user'])) {
                 us.email as email, 
                 rol.id_rol as id_rol, 
                 rol.rol as rol, 
-                us.imagen as perfil,
+                us.perfil as perfil,
                 us.fyh_creacion, 
                 /* FORMATEA LA VARIABLE 'fyh_creacion' para que la fecha salga de la sigte manera Ej:'Ene 2023' */
                 CONCAT( /* SE INICIALIZA LA VARIABLE */

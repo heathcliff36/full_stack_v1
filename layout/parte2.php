@@ -35,8 +35,6 @@
 
 <!--begin::Script-->
 
-<?php include('script-AdminLTE-4.0.0-rc1.php') ?>
-
 </body>
 
 </html>

@@ -47,15 +47,15 @@ $password_hash = password_hash($password_user, PASSWORD_DEFAULT);
 // INSERTAR USUARIO
 // =========================
 $sentencia = $pdo->prepare("INSERT INTO tb_usuarios
-       (nombres, user, email, id_rol, password_user, imagen, fyh_creacion) 
-VALUES (:nombres, :user, :email, :id_rol, :password_user, :imagen, :fyh_creacion)");
+       (nombres, user, email, id_rol, password_user, perfil, fyh_creacion) 
+VALUES (:nombres, :user, :email, :id_rol, :password_user, :perfil, :fyh_creacion)");
 
 $sentencia->bindParam(':nombres', $nombres);
 $sentencia->bindParam(':user', $user);
 $sentencia->bindParam(':email', $email);
 $sentencia->bindParam(':id_rol', $rol);
 $sentencia->bindParam(':password_user', $password_hash);
-$sentencia->bindParam(':imagen', $filename);
+$sentencia->bindParam(':perfil', $filename);
 $sentencia->bindParam(':fyh_creacion', $fechaHora);
 
 $sentencia->execute();

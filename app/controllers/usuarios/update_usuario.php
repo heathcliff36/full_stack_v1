@@ -7,7 +7,7 @@ $sql_usuarios = "SELECT us.id_usuario as id_usuario,
                         us.user as user,
                         us.email as email,
                         rol.rol as rol,
-                        us.imagen as perfil
+                        us.perfil as perfil
                   FROM tb_usuarios as us 
                   INNER JOIN tb_roles as rol ON us.id_rol = rol.id_rol 
                   WHERE id_usuario = '$id_usuario_get' ";

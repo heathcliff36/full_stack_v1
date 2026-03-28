@@ -52,7 +52,7 @@ if (!empty($password_user)) {
                 email = :email,
                 id_rol = :id_rol,
                 password_user = :password_user,
-                imagen = :imagen,
+                perfil = :perfil,
                 fyh_actualizacion = :fyh_actualizacion
             WHERE id_usuario = :id_usuario";
 } else {
@@ -62,7 +62,7 @@ if (!empty($password_user)) {
                 user = :user,
                 email = :email,
                 id_rol = :id_rol,
-                imagen = :imagen,
+                perfil = :perfil,
                 fyh_actualizacion = :fyh_actualizacion
             WHERE id_usuario = :id_usuario";
 }
@@ -72,7 +72,7 @@ $sentencia->bindParam(':nombres', $nombres);
 $sentencia->bindParam(':user', $user);
 $sentencia->bindParam(':email', $email);
 $sentencia->bindParam(':id_rol', $rol);
-$sentencia->bindParam(':imagen', $image_text);
+$sentencia->bindParam(':perfil', $image_text);
 $sentencia->bindParam(':fyh_actualizacion', $fechaHora);
 $sentencia->bindParam(':id_usuario', $id_usuario);
 

@@ -33,12 +33,7 @@ include('app/controllers/ventser/listado_de_ventser.php');
     <!-- Main content -->
     <div class="content">
         <div class="container-fluid">
-
-            Contenido del sistema
-            <br><br>
-
             <div class="row">
-
                 <?php if (($rol_sesion == "ADMINISTRADOR") || ($rol_sesion == "GERENTE")) { ?>
                     <div class="col-lg-3 col-6">
                         <div class="small-box" style="background-Color: #D4F1F4; color: #000;">

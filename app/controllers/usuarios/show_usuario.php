@@ -6,7 +6,7 @@ $sql_usuarios = "SELECT us.id_usuario as id_usuario,
                         us.nombres as nombres,
                         us.user as user,
                         us.email as email,
-                        us.imagen as perfil,
+                        us.perfil as perfil,
                         rol.rol as rol 
                   FROM tb_usuarios as us 
                   INNER JOIN tb_roles as rol ON us.id_rol = rol.id_rol 

@@ -35,7 +35,8 @@ include('../app/controllers/usuarios/listado_de_usuarios.php');
                         <div class="card-header">
                             <h3 class="card-title">Usuarios registrado</h3>
                             <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                        class="fas fa-minus"></i>
                                 </button>
                             </div>
 
@@ -87,17 +88,21 @@ include('../app/controllers/usuarios/listado_de_usuarios.php');
                                             <td>
                                                 <center>
                                                     <div class="btn-group">
-                                                        <a href="show.php?id=<?php echo $id_usuario; ?>" type="button" class="btn btn-info"><i class="fa fa-eye"></i> Ver</a>
+                                                        <a href="show.php?id=<?php echo $id_usuario; ?>" type="button"
+                                                            class="btn btn-info"><i class="fa fa-eye"></i> Ver</a>
                                                         <?php if ($id_usuario == 1) { ?>
                                                         <?php } else { ?>
-                                                            <a href="update.php?id=<?php echo $id_usuario; ?>" type="button" class="btn btn-success"><i class="fa fa-pencil-alt"></i> Editar</a>
-                                                            <a href="delete.php?id=<?php echo $id_usuario; ?>" type="button" class="btn btn-danger"><i class="fa fa-trash"></i> Borrar</a>
+                                                            <a href="update.php?id=<?php echo $id_usuario; ?>" type="button"
+                                                                class="btn btn-success"><i class="fa fa-pencil-alt"></i>
+                                                                Editar</a>
+                                                            <a href="delete.php?id=<?php echo $id_usuario; ?>" type="button"
+                                                                class="btn btn-danger"><i class="fa fa-trash"></i> Borrar</a>
                                                         <?php } ?>
                                                     </div>
                                                 </center>
                                             </td>
                                         </tr>
-                                    <?php
+                                        <?php
                                     }
                                     ?>
                                 </tbody>
@@ -143,7 +148,7 @@ include('../app/controllers/usuarios/listado_de_usuarios.php');
 
 
 <script>
-    $(function() {
+    $(function () {
         $("#example1").DataTable({
             "pageLength": 5,
             "language": {
@@ -169,28 +174,28 @@ include('../app/controllers/usuarios/listado_de_usuarios.php');
             "lengthChange": true,
             "autoWidth": false,
             buttons: [{
-                    extend: 'collection',
-                    text: 'Reportes',
-                    orientation: 'landscape',
-                    buttons: [{
-                        text: 'Copiar',
-                        extend: 'copy',
-                    }, {
-                        extend: 'pdf'
-                    }, {
-                        extend: 'csv'
-                    }, {
-                        extend: 'excel'
-                    }, {
-                        text: 'Imprimir',
-                        extend: 'print'
-                    }]
-                },
-                {
-                    extend: 'colvis',
-                    text: 'Visor de columnas',
-                    collectionLayout: 'fixed three-column'
-                }
+                extend: 'collection',
+                text: 'Reportes',
+                orientation: 'landscape',
+                buttons: [{
+                    text: 'Copiar',
+                    extend: 'copy',
+                }, {
+                    extend: 'pdf'
+                }, {
+                    extend: 'csv'
+                }, {
+                    extend: 'excel'
+                }, {
+                    text: 'Imprimir',
+                    extend: 'print'
+                }]
+            },
+            {
+                extend: 'colvis',
+                text: 'Visor de columnas',
+                collectionLayout: 'fixed three-column'
+            }
             ],
         }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
     });
