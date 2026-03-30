@@ -43,7 +43,7 @@
 
         <center>
             <!-- Imagen local -->
-            <img src="/full_stack_v1/public/images/flogolc.png" alt="Logo" width="300px">
+            <!-- <img src="/full_stack_v1/public/images/flogolc.png" alt="Logo" width="300px"> -->
         </center>
 
         <br>
